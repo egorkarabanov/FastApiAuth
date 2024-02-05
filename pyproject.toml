@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "fastapitodolist"
+version = "0.1.0"
+description = ""
+authors = ["egorkarabanov <egor.karabanov@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.109.2"
+uvicorn = "^0.27.0.post1"
+pydantic = {extras = ["email"], version = "^2.6.0"}
+sqlalchemy = {extras = ["asyncio"], version = "^2.0.25"}
+asyncpg = "^0.29.0"
+alembic = "^1.13.1"
+pydantic-settings = "^2.1.0"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.1.1"
+pytest = "^8.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
