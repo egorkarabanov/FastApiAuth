@@ -73,10 +73,10 @@ class JWTAuth:
         return self._create_access_token(payload=payload, minutes=2 * 60).token
 
     def add_refresh_token_cookie(self, response: Response, token: str) -> None:
-        exp = datetime.utcnow() + timedelta(minutes=settings.RefreshTokenExpiration)
+        exp = datetime.utcnow() + timedelta(minutes=settings.REFRESH_TOKEN_EXPIRE_MINUTES)
         exp.replace(tzinfo=timezone.utc)
         response.set_cookie(
-            key=settings.COOKIE_NAME,
+            key=settings.REFRESH_COOKIE_NAME,
             value=token,
             expires=int(exp.timestamp()),
             httponly=True

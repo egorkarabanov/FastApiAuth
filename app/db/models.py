@@ -30,7 +30,7 @@ class User(Base):
         user = await cls.find_by_email(db=db, email=email)
         if not user or not verify_password(password, user.password):
             return False
-        return User
+        return user
 
 
 class BlackListToken(Base):
