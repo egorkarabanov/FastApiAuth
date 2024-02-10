@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     DB_URL: str = f"postgresql+asyncpg://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
     DB_DEBUG: bool = True if DEBUG else False
 
-    SECRET_KEY: str = environ.get("SECRET_KEY", "5bd7e468d62ae51c0d85e92019e29dcb98c50092ee97b00091cb8361662e8d51")
+    SECRET_KEY: str = environ.get("SECRET_KEY", "your secret")
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     REFRESH_TOKEN_EXPIRE_MINUTES: int = 15 * 24 * 60  # 15 days
